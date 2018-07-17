@@ -1,13 +1,18 @@
 import pdfx # https://github.com/metachris/pdfx
 import re
 
-paper_name = "WaveNetPaper.pdf"
+#paper_name = "WaveNetPaper.pdf"
+#paper_name = "oldPaper.pdf"
+paper_name = "AcousticSpeechRecogCNN.pdf"
 
 pdf = pdfx.PDFx(paper_name)
 metadata = pdf.get_metadata()
 
 references_dict = pdf.get_references_as_dict()
 print("--> All references : ", references_dict)
+
+references_list = pdf.get_references()
+print("--> All references list : ", references_list)
 
 arxiv_ref = references_dict['arxiv']
 print("--> raw arxiv refs : ", arxiv_ref)
